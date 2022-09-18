@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block baseblock %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+</head>
+<div class="conatiner" align = "center">
+    <h1>product list</h1>
+
+<table>
+    <thead>
+    <th>prod id</th>
+    <th>prod name</th>
+    <th>prod rate</th>
+    </thead>
+
+    {% for p in obj %}
+    <tr>
+        <td>{{p.id}}</td>
+        <td>{{p.name}}</td>
+        <td>{{p.rate}}</td>
+        <td><a href="/update/{{p.id}}">Update</a></td>
+        <td><a href="/delete/{{p.id}}">delete</a></td>
+
+
+    </tr>
+    {%endfor%}
+
+</table>
+            <a href="/insert" class = "btn btn-primary btn-lg">Insert</a>
+
+{%endblock%}
+</div>
+<body>
+</body>
+</html>
